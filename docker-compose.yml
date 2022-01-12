@@ -38,16 +38,16 @@ services:
     volumes:
       - ./covid-fastapi:/app  # tf2 serving convention
 
-fastapi-2:    # FastAPI with Uvicorn server for covid19 service web pages and APIs, with backend tensorflow servering
-  build:
-    context: ./covid-fastapi
-  image: ai-service-fastapi-res-sn:0.2.0
-  hostname: fastapi
-  restart: on-failure
-  ports:
-    - 8059-8060:8000 # tensorflow servring port
-  volumes:
-    - ./covid-fastapi:/app  # tf2 serving convention
+  fastapi-2:    # FastAPI with Uvicorn server for covid19 service web pages and APIs, with backend tensorflow servering
+    build:
+      context: ./covid-fastapi
+    image: ai-service-fastapi-res-sn:0.2.0
+    hostname: fastapi
+    restart: on-failure
+    ports:
+      - 8059-8060:8000 # tensorflow servring port
+    volumes:
+      - ./covid-fastapi:/app  # tf2 serving convention
 
   lb:
     build:
